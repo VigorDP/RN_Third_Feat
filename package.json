@@ -1,0 +1,29 @@
+{
+  "name": "Hello",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "apk": "cd android && ./gradlew assembleRelease",
+    "bundle": "react-native bundle --entry-file index.js --platform android --dev false --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res/",
+    "keytool": "keytool -genkeypair -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000"
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-barcodescanner": "^3.1.1",
+    "react-native-camera": "^2.9.0",
+    "react-native-permissions": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/runtime": "7.4.4",
+    "babel-jest": "24.8.0",
+    "jest": "24.8.0",
+    "metro-react-native-babel-preset": "0.54.1",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
